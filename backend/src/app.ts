@@ -13,10 +13,7 @@ app.use(express.urlencoded({ extended: true })); // For form data
 
 app.use(
   cors()
-  //   {
-  //   origin: ["http://localhost:3000", "http://localhost:5173"],
-  //   credentials: true,
-  // }
+
 );
 
 // User routes
