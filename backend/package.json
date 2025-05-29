@@ -4,13 +4,9 @@
   "main": "app.ts",
   "scripts": {
     "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate deploy",
-    "clean": "rimraf dist",
-    "build": "npm run prisma:generate && tsc && npm run copy:prisma",
-    "copy:prisma": "ncp src/generated/prisma dist/generated/",
+    "build": "npm run prisma:generate && tsc && xcopy /E /I prisma\\src\\generated\\prisma dist\\generated\\prisma",
     "start": "node dist/app.js",
-    "postinstall": "npm run prisma:generate",
-    "dev": "nodemon --exec ts-node src/app.ts"
+    "postinstall": "npm run prisma:generate"
   },
   "keywords": [],
   "author": "",
