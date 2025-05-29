@@ -5,7 +5,8 @@
   "scripts": {
     "build": "tsc",
     "start": "ts-node src/app.ts",
-    "dev": "nodemon -r ts-node/register src/app.ts"
+    "dev": "nodemon -r ts-node/register src/app.ts",
+    "deploy": "prisma generate && prisma migrate deploy --schema=src/prisma/schema.prisma"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +17,7 @@
     "cloudinary": "^1.41.3",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
-    "express": "^5.1.0",
+    "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "multer": "^1.4.5-lts.2",
     "multer-storage-cloudinary": "^4.0.0",
