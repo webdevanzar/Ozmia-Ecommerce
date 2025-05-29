@@ -6,7 +6,7 @@
     "build": "tsc",
     "start": "ts-node src/app.ts",
     "dev": "nodemon -r ts-node/register src/app.ts",
-    "deploy": "prisma generate && prisma migrate deploy --schema=src/prisma/schema.prisma"
+    "deploy": "prisma generate && prisma migrate deploy --schema=prisma/schema.prisma"
   },
   "keywords": [],
   "author": "",
