@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "app.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "prisma generate && tsc",
     "start": "node dist/app.js",
     "dev": "nodemon -r ts-node/register src/app.ts",
     "deploy": "prisma generate && prisma migrate deploy --schema=prisma/schema.prisma",
