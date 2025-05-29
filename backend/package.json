@@ -4,10 +4,12 @@
   "main": "app.ts",
   "scripts": {
     "prisma:generate": "prisma generate",
-    "build": "npm run prisma:generate && tsc && xcopy /E /I prisma\\src\\generated\\prisma dist\\generated\\prisma",
+    "build": "npm run prisma:generate && tsc && npm run copy:prisma",
+    "copy:prisma": "shx cp -r prisma/src/generated/prisma dist/generated/prisma",
     "start": "node dist/app.js",
     "postinstall": "npm run prisma:generate"
   },
+  "prebuild": "mkdir -p dist/generated",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -33,10 +35,11 @@
     "zod": "^3.25.28"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10",
     "ncp": "^2.0.0",
+    "nodemon": "^3.1.10",
     "prisma": "^6.8.2",
     "rimraf": "^5.0.5",
+    "shx": "^0.4.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
