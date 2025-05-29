@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "app.ts",
   "scripts": {
-    "build": "prisma generate && tsc",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate deploy",
+    "build": "npm run prisma:generate && tsc && cp -r src/generated/prisma dist/generated/",
     "start": "node dist/app.js",
-    "dev": "nodemon -r ts-node/register src/app.ts",
-    "deploy": "prisma generate && prisma migrate deploy --schema=prisma/schema.prisma",
-    "postinstall": "prisma generate"
+    "postinstall": "npm run prisma:generate"
   },
   "keywords": [],
   "author": "",
