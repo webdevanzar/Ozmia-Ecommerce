@@ -6,7 +6,8 @@
     "build": "tsc",
     "start": "node dist/app.js",
     "dev": "nodemon -r ts-node/register src/app.ts",
-    "deploy": "prisma generate && prisma migrate deploy --schema=prisma/schema.prisma"
+    "deploy": "prisma generate && prisma migrate deploy --schema=prisma/schema.prisma",
+    "postinstall": "prisma generate"
   },
   "keywords": [],
   "author": "",

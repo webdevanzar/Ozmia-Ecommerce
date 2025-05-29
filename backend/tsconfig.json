@@ -26,6 +26,6 @@
     "strictNullChecks": true,
     "noImplicitAny": true
   },
-  "include": ["src/**/*", "src/types/**/*", "tests/**/*.ts"],
+  "include": ["src/**/*", "src/types/**/*", "tests/**/*.ts","src/generated/prisma"],
   "exclude": ["node_modules", "dist", "**/*.spec.ts"]
 }
