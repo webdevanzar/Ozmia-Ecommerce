@@ -5,15 +5,18 @@
   "scripts": {
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate deploy",
-    "build": "npm run prisma:generate && tsc && cp -r src/generated/prisma dist/generated/",
+    "clean": "rimraf dist",
+    "build": "npm run prisma:generate && tsc && npm run copy:prisma",
+    "copy:prisma": "ncp src/generated/prisma dist/generated/",
     "start": "node dist/app.js",
-    "postinstall": "npm run prisma:generate"
+    "postinstall": "npm run prisma:generate",
+    "dev": "nodemon --exec ts-node src/app.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@prisma/client": "^6.7.0",
+    "@prisma/client": "^6.8.2",
     "@types/cors": "^2.8.18",
     "@types/express": "^5.0.2",
     "@types/jsonwebtoken": "^9.0.9",
@@ -35,7 +38,9 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.10",
-    "prisma": "^6.7.0",
+    "ncp": "^2.0.0",
+    "prisma": "^6.8.2",
+    "rimraf": "^5.0.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
