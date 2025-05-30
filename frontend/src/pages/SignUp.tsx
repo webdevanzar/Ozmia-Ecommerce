@@ -48,6 +48,10 @@ export const SignUp = () => {
       {
         onSuccess: (response) => {
           reset();
+          toast.success("Signup successful", {
+            duration: 3000,
+            style: { background: "green" },
+          });
           if (response) navigate("/login");
         },
         onError: (error) => {

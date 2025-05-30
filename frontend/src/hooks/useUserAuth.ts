@@ -23,16 +23,8 @@ export const useUserAuth = () => {
         throw new Error("Invalid action type");
       }
     },
-    onSuccess: (data) => {
-      toast.success("Login successful", {
-        duration: 3000,
-        style: { background: "green" },
-      });
-      console.log("Login data:", data);
-    },
     onError: (error: any) => {
-      toast.error(error?.response?.data?.message || "Login failed");
+      toast.error(error?.response?.data?.message);
     },
   });
 };
-

@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
-import React, { useEffect } from "react";
+import React, { RefObject, useEffect } from "react";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../../redux/authSlice";
+import { RootState } from "../../redux/store";
+import { isTokenValide } from "../../utils/token";
 
 type SideBarSections = {
   id: string;
@@ -71,6 +73,8 @@ export const SideBar: React.FC<SideBarProps> = ({
       link: navItems.find((item) => item.id === "contact")?.link,
     },
   ];
+  const { token } = useSelector((state: RootState) => state.auth);
+  const isAuthenticated = isTokenValide(token);
   const dispatch = useDispatch();
   const logOut = () => {
     dispatch(logout());
@@ -109,7 +113,7 @@ export const SideBar: React.FC<SideBarProps> = ({
                 key={section.id}
                 onClick={() => {
                   if (section.link) {
-                    scrollTo(section.link);
+                    scrollTo(section.link as RefObject<HTMLDivElement | null>);
                   }
                   onClose();
                 }}
@@ -118,9 +122,11 @@ export const SideBar: React.FC<SideBarProps> = ({
               </li>
             )
           )}
-          <li className="border-b" onClick={logOut}>
-            Logout
-          </li>
+          {isAuthenticated && (
+            <li className="border-b" onClick={logOut}>
+              Logout
+            </li>
+          )}
         </ul>
       </div>
     </motion.div>

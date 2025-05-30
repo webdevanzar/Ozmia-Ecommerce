@@ -50,6 +50,10 @@ export const Login = () => {
           const { token, username, cartCount } = response;
           dispatch(login({ token, username, cartCount }));
           reset();
+          toast.success("Login successful", {
+            duration: 3000,
+            style: { background: "green" },
+          });
           navigate("/");
         },
         onError: (error) => {
