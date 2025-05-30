@@ -4,7 +4,7 @@ import { isTokenValide } from "./token";
 import { logout } from "../redux/authSlice";
 
 export const axiosInstance = axios.create({
-  baseURL: "http://localhost:3000/users",
+  baseURL: "https://ozmia-admin-panel.vercel.app/users",
   headers: {
     "Content-Type": "application/json",
   },
