@@ -21,7 +21,7 @@ export const SearchList = () => {
   };
 
   return (
-    <div className="flex p-2 gap-y-2 top-14 flex-col w-[500px] absolute bg-slate-100 rounded-md text-black max-h-80 overflow-y-auto scrollbar-hide z-50">
+    <div className="flex p-2 gap-y-2 top-14 flex-col absolute bg-slate-100 rounded-md text-black max-h-80 overflow-y-auto scrollbar-hide z-50">
       {products?.length !== 0 ? (
         products?.map((product) => (
           <div
@@ -42,7 +42,7 @@ export const SearchList = () => {
           </div>
         ))
       ) : (
-        <div className="flex justify-start items-center gap-x-4 p-2">
+        <div className="flex justify-start items-center p-2">
           <h1>No products found</h1>
         </div>
       )}

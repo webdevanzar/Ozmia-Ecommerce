@@ -76,7 +76,7 @@ const Products = () => {
       {!isShow && (
         <div className="w-[98%] m-auto h-full">
           <div className="w-full flex justify-center items-center">
-            <h1 className="text-3xl font-bold text-primary text-center border-b-2 w-[85%] m-auto pb-2 sticky p-5">
+            <h1 className="text-3xl font-bold text-primary text-center border-b-2 w-[85%] m-auto pb-2 sticky py-5 md:p-5">
               Explore products...
             </h1>
           </div>
@@ -103,7 +103,7 @@ const Products = () => {
                 return (
                   <div className="relative" key={product.id}>
                     <Link to={`/products/${product.id}`}>
-                      <div className="flex flex-col h-48 w-40 md:w-60 md:h-60 bg-white border-secondary border-2 rounded-md cursor-pointer ">
+                      <div className="flex flex-col h-56 w-56 md:w-60 md:h-60 bg-white border-secondary border-2 rounded-md cursor-pointer ">
                         <div className="h-3/5 w-full border-b-2 relative">
                           <img
                             src={product?.image as string}
@@ -111,7 +111,7 @@ const Products = () => {
                             className="w-full h-full object-contain"
                           />
                         </div>
-                        <div className="h-2/5 w-full p-5">
+                        <div className="h-2/5 w-full py-5 px-2">
                           <h2 className="text-xl font-semibold">
                             {product?.title}
                           </h2>

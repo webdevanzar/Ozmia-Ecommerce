@@ -13,7 +13,7 @@ export const SearchInput = () => {
   };
 
   return (
-    <div className="flex justify-strat m-auto pl-3 md:pl-4 items-center w-3/4 md:w-full text-black bg-white p-0 md:p-1 rounded-full border-2">
+    <div className="flex justify-strat m-auto pl-3 md:pl-4 items-center text-black bg-white p-0 md:p-1 rounded-full border-2">
       <FaSearch />
       <input
         type="text"

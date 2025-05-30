@@ -206,7 +206,7 @@ export const Header = ({ scrollTo, refs }: HeaderProps) => {
           </ul>
         </nav>
       ) : (
-        <div className="md:w-1/3 relative">
+        <div className="w-4/6 md:w-1/2 lg:w-1/3 relative">
           <SearchInput />
           {value && isShowList && <SearchList />}
         </div>
